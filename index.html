@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Game</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: sans-serif;
+				background-color: black;
+			}
+			.div {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: max-content;
+				background-color: white;
+				color: black;
+				padding: 5px 10px;
+				border-radius: 10px;
+				user-select: none;
+			}
+			.model {
+				width: 500px;
+				height: 250px;
+				border-radius: 10px;
+				background-color: white;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+			#button {
+				width: 400px;
+				height: 50px;
+				border-radius: 25px;
+				background-color: rgba(5, 134, 134, 0.527);
+				border: none;
+				outline: none;
+				font-size: larger;
+			}
+			.hidden {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div"><span>Score : </span><span id="score">0</span></div>
+		<div class="model" id="score_model">
+			<div>
+				<h1 style="font-size: 3rem" id="h1-score">0</h1>
+				<p>Points</p>
+				<button id="button">Start Game</button>
+			</div>
+		</div>
+		<canvas></canvas>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+			integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+			crossorigin="anonymous"
+		></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
