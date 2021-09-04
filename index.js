@@ -134,7 +134,7 @@ function spawnEnemy() {
 		const angle = Math.atan2(canvas.height / 2 - y, canvas.width / 2 - x);
 		const velocity = { x: Math.cos(angle), y: Math.sin(angle) };
 		enemies.push(new Enemy(x, y, radius, color, velocity));
-	}, 1000);
+	}, 100);
 }
 
 let animationId;
@@ -186,7 +186,7 @@ function animate() {
 			// projectiles touch enemy
 			if (dist - enemy.radius - projectile.radius <= 0) {
 				// increase score
-				score += 100;
+				score += 1;
 				scoreEl.innerText = score;
 
 				// create explosions
@@ -198,20 +198,20 @@ function animate() {
 							Math.random() * 3,
 							enemy.color,
 							{
-								x: (Math.random() - 0.5) * (Math.random() * 4),
-								y: (Math.random() - 0.5) * (Math.random() * 4),
+								x: (Math.random() - 0.5) * (Math.random() * 2),
+								y: (Math.random() - 0.5) * (Math.random() * 2),
 							}
 						)
 					);
 				}
 
-				if (enemy.radius - 10 > 5) {
-					gsap.to(enemy, { radius: enemy.radius - 10 });
+				if (enemy.radius - 7 > 5) {
+					gsap.to(enemy, { radius: enemy.radius - 7 });
 					setTimeout(() => {
 						projectiles.splice(Pindex, 1);
 					}, 0);
 				} else {
-					score += 100;
+					score += 1;
 					scoreEl.innerText = score;
 					setTimeout(() => {
 						enemies.splice(index, 1);
